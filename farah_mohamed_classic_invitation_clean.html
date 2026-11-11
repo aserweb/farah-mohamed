@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ead7c9">
+<title>Farah & Mohamed | Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Lateef:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f8eee5;--paper2:#f2e2d5;--ink:#755447;--muted:#a17e6d;--rose:#bd8c83;--gold:#b89a70;--line:#d8bca9}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#e9d9ce;color:var(--ink);font-family:'Amiri',serif}
+button{font:inherit}.stage{min-height:100svh;display:grid;place-items:center;padding:22px 12px;background:radial-gradient(ellipse at 20% 15%,#fff8f0 0,transparent 34%),radial-gradient(ellipse at 85% 85%,#d8b8aa 0,transparent 35%),#ead9ce}
+.invite{width:min(100%,430px);min-height:780px;background:var(--paper);position:relative;overflow:hidden;box-shadow:0 22px 70px #65473935;border:1px solid #fff9}
+.invite:before,.invite:after{content:"";position:absolute;inset:13px;border:1px solid var(--line);pointer-events:none;z-index:3}
+.invite:after{inset:19px;border:1px solid #e7d4c5}
+.flower{position:absolute;color:#c99d91;opacity:.7;font-size:86px;line-height:1;z-index:1;filter:drop-shadow(0 2px 1px #fff8)}.f1{top:-16px;right:-18px;transform:rotate(25deg)}.f2{bottom:-22px;left:-18px;transform:rotate(195deg)}.f3{top:45%;left:-40px;font-size:54px;transform:rotate(70deg)}
+.inner{position:relative;z-index:2;padding:45px 36px 42px;min-height:780px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.eyebrow{letter-spacing:5px;font:500 11px 'Cormorant Garamond',serif;color:var(--gold);margin:16px 0}
+.ornament{display:flex;align-items:center;gap:12px;color:var(--gold);width:72%;justify-content:center;margin:14px auto}.ornament:before,.ornament:after{content:"";height:1px;background:var(--line);flex:1}
+.seal{width:74px;height:74px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;font-size:30px;color:var(--rose);margin:22px auto 8px;background:#f9f0e8}
+h1{font:500 clamp(42px,12vw,58px)/.95 'Cormorant Garamond',serif;direction:ltr;color:#795849;margin:22px 0 10px}
+.amp{font:italic 30px 'Cormorant Garamond',serif;color:var(--gold);display:block;margin:7px}
+.arabic-names{font:32px 'Lateef',serif;color:#956d60;margin:8px 0}
+.lead{font-size:19px;line-height:1.9;max-width:290px;margin:8px auto;color:#8b6b5e}
+.primary{border:1px solid var(--gold);background:#b88f7e;color:#fffaf5;border-radius:30px;padding:11px 28px;cursor:pointer;box-shadow:0 5px 14px #8d625022;transition:.25s}
+.primary:hover{transform:translateY(-2px);background:#a97b6d}
+.small{font:12px 'Cormorant Garamond',serif;letter-spacing:2px;color:#a78a78;margin-top:auto}
+.page{display:none;animation:appear .65s ease both}.page.active{display:flex;flex-direction:column;align-items:center;flex:1;width:100%}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.page-title{font:italic 28px 'Cormorant Garamond',serif;direction:ltr;color:#956e60;margin:28px 0 12px}
+.page-copy{font-size:19px;line-height:1.9;max-width:300px}
+.date-card{border:1px solid var(--gold);padding:24px 28px;margin:25px 0 15px;position:relative;min-width:205px;background:#fbf4ed}
+.date-card:before,.date-card:after{content:"✦";position:absolute;color:var(--gold);background:var(--paper);padding:0 8px;left:calc(50% - 12px)}.date-card:before{top:-12px}.date-card:after{bottom:-12px}
+.day{font:64px 'Cormorant Garamond',serif;direction:ltr;line-height:1;color:#876252}.month{letter-spacing:4px;font:13px 'Cormorant Garamond',serif;color:var(--gold);margin-top:8px}
+.detail{border-top:1px solid #e4d0c1;padding:16px 0;width:100%;max-width:290px}.detail strong{display:block;font-size:21px;font-weight:700}.detail span{font-size:16px;color:#a18474}
+.countdown{display:flex;gap:10px;direction:ltr;margin:18px 0}.countdown div{border:1px solid var(--line);padding:8px 6px;min-width:57px;background:#fbf5ef}.countdown b{display:block;font:26px 'Cormorant Garamond',serif}.countdown small{font-size:11px;color:var(--muted)}
+.map{display:inline-block;margin:12px 0;color:#956e60;border-bottom:1px solid var(--gold);text-decoration:none;padding:5px 12px}
+.nav{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:auto;padding-top:25px}.nav button{background:transparent;border:1px solid #d9bfad;color:#8e6c5d;border-radius:22px;padding:7px 13px;font-size:14px;cursor:pointer}.nav button.current{background:#b88f7e;color:white;border-color:#b88f7e}
+.timeline{width:100%;max-width:290px;text-align:right;margin-top:15px}.timeline p{border-right:1px solid var(--gold);padding:5px 15px;margin:0 0 12px;font-size:18px}.timeline b{color:#9c7667}
+input,select{width:100%;padding:12px;border:1px solid #dfc8b7;background:#fffaf5;color:#755447;border-radius:4px;font:16px 'Amiri',serif;margin:6px 0}
+.form{width:100%;max-width:285px;text-align:right}.form label{font-size:16px}
+.envelope-wrap{position:absolute;inset:0;z-index:10;display:grid;place-items:center;background:linear-gradient(145deg,#f7e9df,#e8d1c4);transition:opacity .8s,visibility .8s}
+.envelope-wrap.hide{opacity:0;visibility:hidden;pointer-events:none}
+.envelope{width:78%;height:220px;position:relative;filter:drop-shadow(0 14px 18px #76534430);cursor:pointer}
+.env-body{position:absolute;inset:0;background:#f8eee5;border:1px solid #d2b39e;clip-path:polygon(0 0,100% 0,100% 100%,0 100%);z-index:1}
+.env-left,.env-right{position:absolute;inset:0;background:#efdfd3;z-index:2}
+.env-left{clip-path:polygon(0 0,50% 56%,0 100%)}.env-right{clip-path:polygon(100% 0,50% 56%,100% 100%)}
+.env-bottom{position:absolute;inset:0;background:#ead5c7;clip-path:polygon(0 100%,50% 48%,100% 100%);z-index:3}
+.env-flap{position:absolute;inset:0;background:#f3e4d9;clip-path:polygon(0 0,100% 0,50% 62%);transform-origin:top;transition:transform .9s;z-index:4;border-top:1px solid #d2b39e}
+.seal-btn{position:absolute;z-index:5;top:45%;left:50%;transform:translate(-50%,-50%);width:58px;height:58px;border-radius:50%;background:#b9897d;border:2px solid #e8cfc0;color:#fff;font-size:25px;display:grid;place-items:center;box-shadow:0 3px 10px #7d514633}
+.envelope.open .env-flap{transform:rotateX(180deg);z-index:0}.envelope.open .seal-btn{opacity:0;transition:.3s}
+.open-hint{position:absolute;top:calc(50% + 135px);bottom:auto;left:50%;transform:translateX(-50%);width:max-content;max-width:90%;text-align:center;font:13px 'Cormorant Garamond',serif;letter-spacing:3px;color:#987362;white-space:nowrap}
+@media(max-height:760px){.invite,.inner{min-height:720px}.stage{padding:8px}}
+
+/* Gentle falling shimmer */
+.particles{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:11}
+.particle{position:absolute;top:-14px;width:4px;height:4px;border-radius:50%;background:#fffaf4;box-shadow:0 0 7px #c49a83;opacity:0;animation:fall var(--dur) linear var(--delay) infinite}
+.particle:nth-child(3n){width:3px;height:3px;background:#c69b83;box-shadow:0 0 6px #c69b83}
+.particle:nth-child(4n){width:5px;height:5px;background:#ead0bd;box-shadow:0 0 8px #d8b49c}
+@keyframes fall{0%{transform:translate3d(0,-15px,0) rotate(0);opacity:0}12%{opacity:.85}85%{opacity:.65}100%{transform:translate3d(var(--drift),820px,0) rotate(240deg);opacity:0}}
+/* Envelope and page motion */
+.envelope{animation:envelopeFloat 3.8s ease-in-out infinite}
+@keyframes envelopeFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.seal-btn{animation:sealPulse 2.2s ease-in-out infinite}
+@keyframes sealPulse{0%,100%{box-shadow:0 3px 10px #7d514633,0 0 0 0 #b9897d30}50%{box-shadow:0 3px 10px #7d514633,0 0 0 10px #b9897d00}}
+.flower{animation:flowerSway 7s ease-in-out infinite}
+.f2{animation-delay:-2s}.f3{animation-delay:-4s}
+@keyframes flowerSway{0%,100%{translate:0 0;rotate:0deg}50%{translate:5px 8px;rotate:7deg}}
+.page.active{animation:appear .8s cubic-bezier(.2,.75,.25,1) both}
+.primary{position:relative;overflow:hidden}
+.primary:after{content:"";position:absolute;top:-40%;left:-70%;width:45%;height:180%;background:#ffffff40;transform:rotate(22deg);transition:left .65s}
+.primary:hover:after{left:130%}
+\n
+to{opacity:1;transform:translateX(0)}}
+.envelope-wrap.hide .cover-title{opacity:0;transform:translateX(-35px);transition:opacity .45s,transform .55s}
+.page.active > *{animation:slideFromSide .85s cubic-bezier(.2,.75,.25,1) both}
+.page.active > *:nth-child(2){animation-delay:.07s}
+.page.active > *:nth-child(3){animation-delay:.14s}
+.page.active > *:nth-child(4){animation-delay:.21s}
+.page.active > *:nth-child(5){animation-delay:.28s}
+@keyframes slideFromSide{from{opacity:0;transform:translateX(38px)}to{opacity:1;transform:translateX(0)}}
+
+</style>
+</head>
+<body>
+<div class="stage"><main class="invite">
+<div class="flower f1">❀</div><div class="flower f2">❀</div><div class="flower f3">✿</div>
+<div class="particles" id="particles" aria-hidden="true"></div>\n<div class="envelope-wrap" id="cover">
+  <div class="envelope" id="envelope" onclick="openInvite()">
+    <div class="env-body"></div><div class="env-left"></div><div class="env-right"></div><div class="env-bottom"></div><div class="env-flap"></div><div class="seal-btn">♥</div>
+  </div>
+  <div class="open-hint">TAP TO OPEN YOUR INVITATION</div>
+</div>
+<div class="inner">
+<section class="page active" id="p0">
+  <div class="eyebrow">YOU ARE CORDIALLY INVITED</div><div class="ornament">✧</div>
+  <div class="seal">❀</div>
+  <h1>Farah <span class="amp">&</span> Mohamed</h1>
+  <div class="arabic-names">فرح & محمد</div>
+  <p class="lead">بكل الحب والفرحة، يسعدنا دعوتكم لمشاركتنا أجمل يوم في حياتنا</p>
+  <div class="ornament">❦</div><button class="primary" onclick="showPage(1)">افتحوا تفاصيل الدعوة</button>
+  <div class="small">A DAY TO REMEMBER · 2026</div>
+</section>
+<section class="page" id="p1">
+  <div class="eyebrow">SAVE THE DATE</div><div class="page-title">Our Special Day</div>
+  <p class="page-copy">وجودكم هيكمّل فرحتنا، مستنيينكم تشاركونا اليوم المميز ده.</p>
+  <div class="date-card"><div class="day">12</div><div class="month">NOVEMBER · THURSDAY</div><div class="ornament">✦</div><div style="font-size:19px">الساعة 8 مساءً</div></div>
+  <div class="countdown" id="countdown"><div><b>--</b><small>DAYS</small></div><div><b>--</b><small>HOURS</small></div><div><b>--</b><small>MIN</small></div><div><b>--</b><small>SEC</small></div></div>
+  <button class="primary" onclick="showPage(2)">المكان والتفاصيل</button>
+</section>
+<section class="page" id="p2">
+  <div class="eyebrow">WHERE TO MEET</div><div class="page-title">The Venue</div>
+  <div class="seal">⌖</div><div class="detail"><strong>قاعة السرايا</strong><span>صلاح سالم – القاهرة</span></div>
+  <p class="page-copy">خلف مسجد الرحمن الرحيم</p>
+  <a class="map" target="_blank" href="https://www.google.com/maps/search/?api=1&query=قاعات+السرايا+صلاح+سالم+القاهرة">افتح الموقع على الخريطة ↗</a>
+  <button class="primary" onclick="showPage(3)">برنامج اليوم</button>
+</section>
+<section class="page" id="p3">
+  <div class="eyebrow">LET'S CELEBRATE</div><div class="page-title">The Celebration</div>
+  <div class="seal">✧</div><p class="page-copy">ليلة مليانة حب وضحك وذكريات حلوة، ونتمنى تكونوا جزء منها.</p>
+  <div class="timeline"><p><b>08:00 PM</b> — استقبال الضيوف</p><p><b>08:30 PM</b> — بداية الاحتفال</p><p><b>09:00 PM</b> — وقت الفرح والرقص</p></div>
+  <button class="primary" onclick="showPage(4)">تأكيد الحضور</button>
+</section>
+<section class="page" id="p4">
+  <div class="eyebrow">WITH LOVE</div><div class="page-title">See You There</div>
+  <div class="seal">♡</div>
+  <p class="page-copy">فرحتنا مش هتكمل غير بوجودكم معانا، مستنيينكم بكل حب.</p>
+  <div class="ornament">❦</div>
+  <div class="small">A DAY TO REMEMBER</div>
+</section>
+<nav class="nav" id="nav">
+<button class="current" onclick="showPage(0)">الرئيسية</button><button onclick="showPage(1)">التاريخ</button><button onclick="showPage(2)">المكان</button><button onclick="showPage(3)">البرنامج</button><button onclick="showPage(4)">ختام الدعوة</button>
+</nav>
+</div></main></div>
+<script>
+function openInvite(){document.getElementById('envelope').classList.add('open');setTimeout(()=>{document.getElementById('cover').classList.add('hide');document.getElementById('p0').classList.remove('active');void document.getElementById('p0').offsetWidth;document.getElementById('p0').classList.add('active')},850)}
+function showPage(n){document.querySelectorAll('.page').forEach((p,i)=>p.classList.toggle('active',i===n));document.querySelectorAll('.nav button').forEach((b,i)=>b.classList.toggle('current',i===n))}
+function sendRSVP(e){e.preventDefault();let name=document.getElementById('guest').value;let count=document.getElementById('guests').value;let status=document.getElementById('attendance').value;let msg=`RSVP - Farah & Mohamed%0Aالاسم: ${encodeURIComponent(name)}%0Aعدد الأفراد: ${count}%0A${encodeURIComponent(status)}`;document.getElementById('thanks').textContent='شكرًا ليكم ❤️';window.open('https://wa.me/?text='+msg,'_blank')}
+const target=new Date('2026-11-12T20:00:00+02:00').getTime();
+function tick(){let d=target-Date.now();if(d<0)d=0;let vals=[Math.floor(d/86400000),Math.floor(d/3600000)%24,Math.floor(d/60000)%60,Math.floor(d/1000)%60];let labels=['DAYS','HOURS','MIN','SEC'];document.getElementById('countdown').innerHTML=vals.map((v,i)=>`<div><b>${String(v).padStart(2,'0')}</b><small>${labels[i]}</small></div>`).join('')}
+tick();setInterval(tick,1000);
+const particleLayer=document.getElementById('particles');
+for(let i=0;i<42;i++){
+  const dot=document.createElement('span'); dot.className='particle';
+  dot.style.left=(Math.random()*100)+'%';
+  dot.style.setProperty('--dur',(5+Math.random()*7)+'s');
+  dot.style.setProperty('--delay',(-Math.random()*12)+'s');
+  dot.style.setProperty('--drift',((Math.random()*70)-35)+'px');
+  particleLayer.appendChild(dot);
+}
+</script>
+</body></html>
